@@ -1,0 +1,25 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	C0 -> C0 [label="isEmpty:FALSE"]
+	C1 -> C0 [label=clone]
+	C0 -> C0 [label=hashCode]
+	C0 -> C0 [label=get]
+	C1 -> C1 [label="isEmpty:TRUE"]
+	C1 -> C0 [label=get]
+	C1 -> C0 [label=hashCode]
+	C0 -> CEND [label=<END>]
+	C0 -> C1 [label="isEmpty:TRUE"]
+	C1 -> C0 [label=put]
+	C0 -> C0 [label=put]
+	CSTART -> C0 [label=Hashtable]
+	C1 -> CEND [label=<END>]
+	C0 -> C0 [label=remove]
+	C0 -> C0 [label=clone]
+	C1 -> C0 [label=remove]
+}

@@ -1,0 +1,18 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	"C-1" -> "C-1" [label="hasMoreTokens:TRUE"]
+	"C-1" -> "C-1" [label="isLetterOrDigitAhead:TRUE"]
+	"C-1" -> "C-1" [label="hasMoreTokens:FALSE"]
+	"C-1" -> "C-1" [label=nextToken]
+	"C-1" -> "C-1" [label="nextIsSep:TRUE"]
+	"C-1" -> "C-1" [label="isLetterOrDigitAhead:FALSE"]
+	"C-1" -> CEND [label=<END>]
+	CSTART -> "C-1" [label=NumberFormatStringTokenizer]
+	"C-1" -> "C-1" [label="nextIsSep:FALSE"]
+}

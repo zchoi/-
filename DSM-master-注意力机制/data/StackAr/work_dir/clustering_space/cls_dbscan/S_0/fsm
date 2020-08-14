@@ -1,0 +1,19 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	"C-1" -> "C-1" [label=makeEmpty]
+	"C-1" -> "C-1" [label="isEmpty:FALSE"]
+	CSTART -> "C-1" [label=StackAr]
+	"C-1" -> "C-1" [label="isEmpty:TRUE"]
+	"C-1" -> "C-1" [label=top]
+	"C-1" -> "C-1" [label="isFull:TRUE"]
+	"C-1" -> CEND [label=<END>]
+	"C-1" -> "C-1" [label="isFull:FALSE"]
+	"C-1" -> "C-1" [label=topAndPop]
+	"C-1" -> "C-1" [label=push]
+}

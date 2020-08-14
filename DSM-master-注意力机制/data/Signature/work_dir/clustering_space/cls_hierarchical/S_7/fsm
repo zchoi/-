@@ -1,0 +1,26 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	C4 -> CEND [label=<END>]
+	C6 -> CEND [label=<END>]
+	C0 -> CEND [label=<END>]
+	CSTART -> C4 [label=Signature]
+	C0 -> C1 [label=update]
+	C4 -> C0 [label=initVerify]
+	C0 -> C6 [label="verify:FALSE"]
+	C2 -> CEND [label=<END>]
+	C5 -> CEND [label=<END>]
+	C1 -> C5 [label=initVerify]
+	C6 -> C0 [label=initVerify]
+	C1 -> C2 [label="verify:FALSE"]
+	C1 -> CEND [label=<END>]
+	C0 -> C0 [label=initVerify]
+	C6 -> C1 [label=update]
+	C6 -> C6 [label="verify:FALSE"]
+	C1 -> C1 [label=update]
+}

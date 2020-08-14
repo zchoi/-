@@ -1,0 +1,38 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	C1 -> C0 [label="remove:FALSE"]
+	C0 -> C2 [label=size]
+	C0 -> C0 [label=remove]
+	C0 -> C1 [label=toArray]
+	C2 -> C0 [label=remove]
+	C2 -> C0 [label="add:TRUE"]
+	C2 -> C1 [label=toArray]
+	C1 -> C0 [label="add:TRUE"]
+	C0 -> C0 [label="remove:FALSE"]
+	C1 -> C0 [label=addLast]
+	C2 -> C0 [label=addLast]
+	C2 -> C2 [label="remove:TRUE"]
+	CSTART -> C2 [label=LinkedList]
+	C2 -> C2 [label=listIterator]
+	C0 -> C0 [label=listIterator]
+	C0 -> C0 [label="add:TRUE"]
+	C2 -> C0 [label=listIterator]
+	C0 -> C2 [label=listIterator]
+	C2 -> CEND [label=<END>]
+	C0 -> C2 [label="remove:TRUE"]
+	C0 -> C0 [label=addLast]
+	C1 -> CEND [label=<END>]
+	C2 -> C2 [label=size]
+	C0 -> C0 [label=size]
+	C2 -> C0 [label="remove:FALSE"]
+	C1 -> C0 [label=remove]
+	C1 -> C2 [label="remove:TRUE"]
+	C1 -> C2 [label=add]
+	C0 -> CEND [label=<END>]
+}

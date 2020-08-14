@@ -1,0 +1,19 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	C5
+	node [shape=doublecircle]
+	C4
+	node [shape=circle]
+	C5 -> C1 [label=StringTokenizer]
+	C2 -> C2 [label="hasMoreTokens:FALSE"]
+	C2 -> C4 [label=<END>]
+	C1 -> C2 [label="hasMoreTokens:FALSE"]
+	C1 -> C4 [label=<END>]
+	C1 -> C0 [label="hasMoreTokens:TRUE"]
+	C1 -> C1 [label=nextToken]
+	C0 -> C4 [label=<END>]
+	C0 -> C0 [label="hasMoreTokens:TRUE"]
+	C0 -> C1 [label=nextToken]
+}

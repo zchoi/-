@@ -1,0 +1,15 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	CSTART -> "C-1" [label=ZipOutputStream]
+	"C-1" -> "C-1" [label=closeEntry]
+	"C-1" -> CEND [label=<END>]
+	"C-1" -> "C-1" [label=close]
+	"C-1" -> "C-1" [label=putNextEntry]
+	"C-1" -> "C-1" [label=write]
+}

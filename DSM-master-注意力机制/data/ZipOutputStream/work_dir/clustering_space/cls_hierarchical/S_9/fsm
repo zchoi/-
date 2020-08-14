@@ -1,0 +1,29 @@
+digraph Automata {
+rankdir=LR
+size="8,5"
+	node [shape=star]
+	CSTART
+	node [shape=doublecircle]
+	CEND
+	node [shape=circle]
+	C1 -> C0 [label=close]
+	C7 -> C6 [label=putNextEntry]
+	C4 -> C3 [label=closeEntry]
+	C4 -> C0 [label=close]
+	C6 -> C8 [label=write]
+	C8 -> C6 [label=putNextEntry]
+	C6 -> C1 [label=closeEntry]
+	C6 -> C6 [label=putNextEntry]
+	C3 -> C3 [label=closeEntry]
+	C3 -> C4 [label=write]
+	C0 -> CEND [label=<END>]
+	C7 -> C2 [label=close]
+	C7 -> C3 [label=closeEntry]
+	C2 -> C2 [label=close]
+	C3 -> C1 [label=putNextEntry]
+	C3 -> C0 [label=close]
+	C6 -> C2 [label=close]
+	C4 -> C4 [label=write]
+	CSTART -> C7 [label=ZipOutputStream]
+	C2 -> CEND [label=<END>]
+}
